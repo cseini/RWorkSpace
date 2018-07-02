@@ -1,0 +1,8 @@
+sample(0:2,1, replace = TRUE)
+my <- 0
+com <- sample(0:2,1, replace = TRUE)
+if((my-com)==0){ print("DRAW")
+  }else if((my-com)==1){ print("WIN")
+    }else if((my-com)==-2){ print("WIN")} else print("LOOSE")
+
+    
