@@ -35,22 +35,7 @@ x <- switch (
 )
 print(x)
 
-user <- sample(0:2,1,replace=TRUE)
-print(switch (
-  toString(user-sample(0:2,1,replace=TRUE)),
-  '-1' = "승리",
-  '2' = "승리",
-  '0' = "무승부",
-  '1'= "패배",
-  '-2'= "패배"))
 
-bmi <- toString(sample(50:100,1,replace=TRUE)/(sample(160:180,1,replace=TRUE)^2/10000))
-if(bmi<18.5) "저체중" else
-  if(18.5<=bmi && bmi<23) print("정상") else
-    if(23<=bmi && bmi<25) print("비만 전단계") else
-      if(25<=bmi && bmi<30) print("1단계 비만") else
-        if(30<=bmi && bmi<35) print("2단계 비만") else
-          print("3단계 비만")
 
 # vector 사용법
 print(c(1:10))
@@ -95,50 +80,8 @@ for (i in 1:5)
   if(i<5) cat(i,'+ ') else
     cat(i,'=',sum(1:5))
 
-# 1-2+3-4+5.............-100=-50
-for(i in 1:100){
-  if(i==100)
-    cat(i, "=",sum(seq(1,100,2))-sum(seq(2,100,2)))
-  else if(i%%2==1) cat(i,"- ")
-  else
-    cat(i,"+ ")
-}
 
-for(i in 1:100){
-  if(i==100)
-    cat(i,"=",sum(seq(1,100,2))-sum(seq(2,100,2)))
-  else
-    switch (toString(i%%2),
-      '0' = cat(i,"+ "),
-      '1' = cat(i,"- ")
-  )
-}
 
-# *************************
-# 이름 | 총점 | 평균 | 등급
-#--------------------------
-# 
-# *************************
-
-name <- '홍길동'
-kor <- 99
-eng <- 88
-math <- 76
-cat(' ****************************\n',
-    '|  이름  | 총점 | 평균 | 등급 |',
-    '\n ---------------------------\n',
-    '|',name,'|',sum(kor,eng,math),'|',
-    round(mean(c(kor,eng,math)),1),'| ',
-    switch(toString(avg%/%10),
-           '10' = 'A',
-           '9' = 'A',
-           '8' = 'B',
-           '7' = 'C',
-           '6' = 'D',
-           '5' = 'E',
-           'F'
-    ),' |',
-    '\n ****************************')
 
 
 
