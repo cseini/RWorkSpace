@@ -75,7 +75,7 @@ pie(std_data$mean,paste(std_data$name,std_data$mean),main="학생별평균")
 barplot(std_data$mean,names.arg=std_data$name, main="학생별 평균", xlab="name", ylab="mean", col="red", border="blue")
 
 ##히스토그램
-hist(std_data$mean, xlab = "점수", ylab ="가중치", col = "yellow",border = "blue", main="평균 히스토그램")
+hist(c(std_data$mean), xlab = "점수", ylab ="가중치", col = "yellow",border = "blue", main="평균 히스토그램")
 
 ##라인차트
 plot(std_data$mean,type = "o")
