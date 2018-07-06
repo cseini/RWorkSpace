@@ -17,10 +17,12 @@ tail(midwest)
 midwest$total <- midwest$poptotal
 midwest$asian <- midwest$popasian
 midwest$total_asia <- (midwest$asia/midwest$total)*100
-hist(midwest$total_asia)
+hist(midwest$total_asia,xlab ="인구분포")
 summary(midwest)
 midwest$sep <- ifelse(midwest$total_asia<mean(midwest$total_asia), 'large', 'small')
 table(midwest$sep)
 hist(x=midwest$total_asia)
 qplot(midwest$sep)
 write.csv(midwest, file = "update_midwest.csv")
+
+midwest <- subset(midwest, select=-mean) ##삭제
